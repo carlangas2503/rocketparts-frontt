@@ -10,7 +10,7 @@ import Redirect from "../Redirect/Redirect";
 
 export default function Success(params) {
 
-    const { isAuthenticated } = useAuth0();
+    const {user, isAuthenticated } = useAuth0();
 
     const dispatch = useDispatch()
     const porComprar = useSelector(state=>state.comprados)
@@ -21,8 +21,13 @@ export default function Success(params) {
         dispatch(limpiarComprados())
         dispatch(limpiarCarrito())
         const ayu = async()=>{
-            const res = await axios(`${URL}success`)
-            return res.data
+            if(isAuthenticated){
+                const res = await axios(`${URL}success`,{
+                    user
+                })
+                return res.data
+            }
+
         }
         ayu()
     },[dispatch])
