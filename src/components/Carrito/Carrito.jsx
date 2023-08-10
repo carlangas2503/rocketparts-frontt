@@ -78,7 +78,7 @@ export function Carrito (){
             {elementos.length?
             <div className={style.container}>
                 {elementos?.map((ele)=><CardsCarrito ele={ele} preferenceId={preferenceId}/>)}
-            </div>:<h1 className={style.carritoVacio}>Vamos, agrega algo a tu carrito!!</h1>}
+            </div>:<h1 className={style.carritoVacio}>Vamos, agrega algo a tu carrito!!!</h1>}
             <br />
             <br />
             {elementos.length?<div className={style.total}>
