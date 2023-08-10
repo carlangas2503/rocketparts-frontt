@@ -20,7 +20,7 @@ export default function CardsCarrito({ele,preferenceId}) {
         dispatch(productosRetirados(ele.id))
     }
     const quitar = (id)=>{
-        window.location.reload();
+        window.location.reload(true);
         dispatch(removeCarrito(Number(id)))
     }
     return(
