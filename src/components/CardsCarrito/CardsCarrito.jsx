@@ -20,7 +20,7 @@ export default function CardsCarrito({ele,preferenceId}) {
         dispatch(productosRetirados(ele.id))
     }
     const quitar = (id)=>{
-        // window.location.reload();
+        window.location.reload();
         dispatch(removeCarrito(Number(id)))
     }
     return(
@@ -33,7 +33,7 @@ export default function CardsCarrito({ele,preferenceId}) {
             <div className={style.contAum}>
                 {!preferenceId?<button className={style.botonesAyD} onClick={res}>-</button>:null}{cont}{!preferenceId?<button className={style.botonesAyD} onClick={sum}>+</button>:null}
             </div>  
-            <Link to='/Tienda'><button className={style.butonInterno} onClick={()=>quitar(ele.id)}>quitar carrito</button></Link>
+                <button className={style.butonInterno} onClick={()=>quitar(ele.id)}>quitar carrito</button>
             </div>
 
         </div>
