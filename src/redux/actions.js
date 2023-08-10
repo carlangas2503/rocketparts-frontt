@@ -78,7 +78,7 @@ export const removeCarrito = (id) =>{
 }
 export function usuarioID(sub){
     return async function (dispatch) {
-        const json = await axios(`/usuarios/${sub}`)
+        const json = await axios(`${URL}users/${sub}`)
         return dispatch({
             type: "USUARIO_ID",
             payload: json.data
@@ -88,7 +88,7 @@ export function usuarioID(sub){
 export const getProductos = () =>{
     return async function(dispatch){
         try {
-            const json = await axios.get('http://localhost:3001/products')
+            const json = await axios.get(`${URL}products`)
             return dispatch({
                 type: GET_ALL_PRODUCTS,
                 payload: json.data.productos
