@@ -14,7 +14,13 @@ import {
   validate_edit_desc
 } from './ValidationEdit'
 import {URL,name_cloudinary} from '../../constantes'
+import { useAuth0 } from "@auth0/auth0-react";
+import Redirect from "../Redirect/Redirect";
+
 export default function FormCreate(params) {
+
+  const { isAuthenticated } = useAuth0()
+
     const {id} = useParams()
     const dispatch = useDispatch();
     const detalle = useSelector(state=>state.detail)
@@ -99,6 +105,11 @@ export default function FormCreate(params) {
     useEffect(()=>{
         dispatch(buscarId(id))
     },[dispatch])
+
+
+    if(isAuthenticated){
+
+    
     return(
         <div>
             <form className={style.containerForm} onSubmit={onSubmit}>
@@ -155,5 +166,7 @@ export default function FormCreate(params) {
             </form>
 
         </div>
-    )
+    )} else {
+      return <Redirect/>
+    }
 }

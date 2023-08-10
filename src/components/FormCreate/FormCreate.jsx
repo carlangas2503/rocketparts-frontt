@@ -12,8 +12,13 @@ import {
 } from './Validation'
 import {Link } from 'react-router-dom'
 import { URL ,name_cloudinary} from '../../constantes'
+import { useAuth0 } from "@auth0/auth0-react";
+import Redirect from '../Redirect/Redirect'
 
 export default function FormCreate() {
+
+  const { isAuthenticated } = useAuth0();
+
   const [errorImagen, setErrorImagen] = useState('')
   const [ crearProd, setCrearProd ] = useState({
     nombreproducto:'',
@@ -95,7 +100,10 @@ export default function FormCreate() {
   const [errorCant, setErrorCant] = useState('Ingrese la cantidad de productos a la venta')
   const [errorCategoria,setErrorCategoria] = useState('A que tipo de mercado pertenece tu producto')
   const [errorMarca,setErrorMarca] = useState('A que marca pertenece tu producto?')
-    return(
+  if(isAuthenticated){
+
+  
+  return(
         <div class='text-zinc-100'>
             <form className={style.containerForm} action="" onSubmit={(event)=>submit(event)}>
               <Link to='/Tienda'><span className={style.butonVolver}>🡸</span></Link>
@@ -176,5 +184,7 @@ export default function FormCreate() {
                 <br />
             </form>
         </div>
-    )
+    )} else {
+      return <Redirect/>
+    }
 }

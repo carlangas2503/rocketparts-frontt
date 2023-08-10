@@ -5,8 +5,13 @@ import { Link } from "react-router-dom";
 import axios from 'axios'
 import { URL } from "../../constantes";
 import style from './Success.module.css'
+import { useAuth0 } from "@auth0/auth0-react";
+import Redirect from "../Redirect/Redirect";
 
 export default function Success(params) {
+
+    const { isAuthenticated } = useAuth0();
+
     const dispatch = useDispatch()
     const porComprar = useSelector(state=>state.comprados)
     useEffect(()=>{
@@ -21,12 +26,18 @@ export default function Success(params) {
         }
         ayu()
     },[dispatch])
-    return(
-        <div className={style.container}>
+
+    if(isAuthenticated){
+
+        return(
+            <div className={style.container}>
             <h1 className={style.cuerpo}>GRACIAS POR SU COMPRA</h1>
             <br />
             <Link to='/Tienda'><button className={style.butonInterno}>Volver a comprar con nosostros!!</button></Link>
         </div>
     )
+    } else {
+        return <Redirect/>
+    }
     
 }
