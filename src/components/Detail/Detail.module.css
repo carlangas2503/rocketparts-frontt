@@ -1,0 +1,79 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin-block: 2rem;
+    gap: 2rem;
+}
+.allContainer{
+    font-family: "Quicksand", sans-serif;
+    display: grid;
+    place-items: center;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+.botones{
+    cursor: pointer;
+	appearance: none;
+	border: .2em solid white;
+	background: hsl(0 0 0/0);
+	padding: .85em 1.5em;
+	color: white;
+	border-radius: 2em;
+    margin: 0 0.5rem;
+	transition: 1s;
+	&:hover, &:focus, &:active {
+		background: white;
+		color: black;
+	}
+}
+.butonVolver{
+    cursor: pointer;
+    position: absolute;
+    left: 2rem;
+	appearance: none;
+	border: .2em solid white;
+	background: hsl(0 0 0/0);
+	padding: .60em;
+	color: white;
+	border-radius: 45%;
+	transition: 1s;
+	&:hover, &:focus, &:active {
+		background: white;
+		color: black;
+	}
+}
+.imagen{
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    padding: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background-color: rgb(105, 105, 224);
+}
+.card__body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.title{
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contBotones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

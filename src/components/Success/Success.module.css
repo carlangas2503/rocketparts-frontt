@@ -1,0 +1,48 @@
+@use postcss-preset-env {
+    stage: 0;
+  }
+  
+:root {
+    --color-background: rgb(105, 105, 224);
+    --stroke-width: calc(1em / 16);
+    --font-size: 4rem;
+    --font-weight: 700;
+    --letter-spacing: calc(1em / 8);
+}
+.container{
+    background-color: var(--color-background);
+    display: grid;
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    min-block-size: 100vh;
+    place-items: center;
+    padding: 5vmin;
+}
+.cuerpo{
+    background-clip: text;
+    background-image: linear-gradient(to right, #00ffbf,#ff0015, #ff00d2, #fed90f);
+    color: var(--color-background);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    letter-spacing: var(--letter-spacing);
+    padding: calc(--stroke-width / 2);
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: var(--stroke-width);
+}
+.butonInterno{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+	appearance: none;
+	border: .2em solid white;
+	background: hsl(0 0 0/0);
+	padding: .85em 1.5em;
+	color: white;
+	border-radius: 2em;
+	transition: 1s;
+	&:hover, &:focus, &:active {
+		background: white;
+		color: rgb(105, 105, 224);
+	}
+}

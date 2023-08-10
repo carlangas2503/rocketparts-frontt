@@ -1,0 +1,62 @@
+.drop{
+    border: 1px solid rgb(105, 105, 224);
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(31, 31, 31);
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+}
+.drop:hover{
+    border: 1px solid white;
+}
+
+.containerForm{
+    display: grid;
+	place-content: center;
+	margin: 0;
+    padding: auto;
+	grid-template: repeat(3,1fr)
+}
+.butonInterno{
+    cursor: pointer;
+	appearance: none;
+	border: .2em solid rgb(105, 105, 224);
+	background: hsl(0 0 0/0);
+	padding: .85em 1.5em;
+	color: rgb(105, 105, 224);
+	border-radius: 2em;
+	transition: 1s;
+	&:hover, &:focus, &:active {
+		background: rgb(105, 105, 224);
+		color: white;
+	}
+}
+.butonVolver{
+    cursor: pointer;
+	appearance: none;
+	border: .2em solid rgb(105, 105, 224);
+	background: hsl(0 0 0/0);
+	padding: .60em;
+	color: rgb(105, 105, 224);
+	border-radius: 45%;
+	transition: 1s;
+	&:hover, &:focus, &:active {
+		background: rgb(105, 105, 224);
+		color: white;
+	}
+}
+.inputs{
+    background-color: rgb(31, 31, 31);
+    appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid rgb(105, 105, 224);
+	background: rgba(rgb(105, 105, 224), .2);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: rgb(105, 105, 224);
+	width: 30rem;
+}

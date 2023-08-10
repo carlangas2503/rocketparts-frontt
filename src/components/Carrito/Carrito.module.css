@@ -1,0 +1,103 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin-block: 2rem;
+    gap: 2rem;
+    color:white
+}
+.contAum{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.allContainer{
+    font-family: "Quicksand", sans-serif;
+    display: grid;
+    place-items: center;
+    background: #7f7fd5;
+    background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+    color: white;
+}
+.imagen{
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background-color: rgb(105, 105, 224);
+  
+}
+.tag {
+    align-self: flex-start;
+    padding: .25em .75em;
+    border-radius: 1em;
+    font-size: .75rem;
+    background: #56CCF2;
+    background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+    color: #fafafa;
+}
+.contPago{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cuerpo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+}
+.botonesAyD{
+    cursor: pointer;
+	appearance: none;
+	border: .2em solid white;
+	background: hsl(0 0 0/0);
+	padding: 0.5rem 1rem ;
+    margin: 0.5rem;
+	color: white;
+	border-radius: 50%;
+	transition: 1s;
+	&:hover, &:focus, &:active {
+		background: white;
+		color: black;
+	}
+}
+.total{
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 0.5rem;
+    background-color: black;
+}
+.butonInterno{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+	appearance: none;
+	border: .2em solid white;
+	background: hsl(0 0 0/0);
+	padding: .85em 1.5em;
+	color: white;
+	border-radius: 2em;
+	transition: 1s;
+	&:hover, &:focus, &:active {
+		background: white;
+		color: rgb(105, 105, 224);
+	}
+}
+.carritoVacio{
+    font-size: 3rem;
+}
